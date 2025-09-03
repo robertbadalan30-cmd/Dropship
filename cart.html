@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coș – NicheDrop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="cart">
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt=""> <span>NicheDrop</span></a>
+    <div class="nav-right">
+      <a class="btn" href="index.html">🛍️ Continuă cumpărăturile</a>
+      <a class="btn" href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Coș de cumpărături</h1>
+  <p class="notice">Acesta este un coș demo (static). Pentru plăți reale, conectează Stripe/PayPal prin Netlify Functions sau folosește platforme ca Ecwid/TikTok Shop.</p>
+  <table class="table">
+    <thead><tr><th></th><th>Produs</th><th>Preț</th><th>Cantitate</th><th>Total</th><th></th></tr></thead>
+    <tbody data-cart-body></tbody>
+    <tfoot><tr><td colspan="4" style="text-align:right"><strong>Total</strong></td><td colspan="2"><strong data-cart-total>0</strong></td></tr></tfoot>
+  </table>
+  <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+    <a class="btn" href="index.html">⟵ Continuă cumpărăturile</a>
+    <a class="btn primary" href="checkout.html">Finalizează (demo)</a>
+    <button class="btn" onclick="localStorage.removeItem('cart');location.reload()">Golește coșul</button>
+  </div>
+</main>
+
+<footer class="footer"><div class="container inner">© <span id="year"></span> NicheDrop</div></footer>
+<div class="toast"></div>
+<script src="script.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

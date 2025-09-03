@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NicheDrop – Găsește produse smart la prețuri accesibile</title>
+  <meta name="description" content="Găsește produse smart la prețuri accesibile. Magazin dropshipping 100% static, ușor de publicat gratuit.">
+  <meta property="og:title" content="NicheDrop">
+  <meta property="og:description" content="Găsește produse smart la prețuri accesibile">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/logo.svg">
+  <link rel="stylesheet" href="styles.css?v=2025-09-02T14:11:19.907193">
+</head>
+<body data-page="home">
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo.svg" alt="logo">
+      <span>NicheDrop</span>
+    </a>
+    <div class="nav-right">
+      <a class="btn" href="cart.html">🛒 Coș <span class="kbd" data-cart-count>0</span></a>
+      <a class="btn" href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1>Găsește produse smart la prețuri accesibile</h1>
+    <p>Site static (gratuit) – găzduiește pe GitHub Pages, Netlify sau Cloudflare Pages. Editează <code>products.json</code> pentru a adăuga produse.</p>
+    <div class="searchbar">
+      <input data-search type="search" placeholder="Caută produse… (ex. animale, gadget, fitness)" aria-label="Căutare">
+      <a class="btn primary" href="cart.html">Vezi coșul</a>
+    </div>
+    <div class="notice">
+      <strong>Notă:</strong> Dropshipping = tu încasezi și plasezi comanda la furnizor. Adaugă link-ul furnizorului în pagina produsului (<code>supplier_link</code>).
+    </div>
+  </section>
+
+  <section>
+    <div class="grid" data-grid>
+      <!-- Produse randate din products.json -->
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container inner">
+    © <span id="year"></span> NicheDrop. Creat pentru testare dropshipping. <a href="about.html">Despre</a>
+  </div>
+</footer>
+
+<div class="toast"></div>
+<script src="script.js?v=2025-09-02T14:11:19.907193"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+</body>
+</html>

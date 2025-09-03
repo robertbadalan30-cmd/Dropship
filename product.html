@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produs – NicheDrop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt=""> <span>NicheDrop</span></a>
+    <div class="nav-right">
+      <a class="btn" href="cart.html">🛒 Coș <span class="kbd" data-cart-count>0</span></a>
+      <a class="btn" href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div id="product"></div>
+  <div class="toast"></div>
+</main>
+
+<footer class="footer"><div class="container inner">© <span id="year"></span> NicheDrop</div></footer>
+
+<script src="script.js"></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const params = new URLSearchParams(location.search);
+const id = params.get('id');
+
+async function init(){
+  await loadProducts();
+  updateCartCount();
+  const p = state.products.find(x=> x.id===id);
+  const el = document.getElementById('product');
+  if(!p){ el.innerHTML = '<p>Produsul nu a fost găsit.</p>'; return; }
+
+  const variants = (p.variants||[]).map(v => 
+    `<label>${v.name}: 
+      <select class="btn" style="padding:8px 10px">
+        ${v.options.map(o=>`<option>${o}</option>`).join('')}
+      </select>
+    </label>`
+  ).join(' ');
+
+  el.innerHTML = `
+  <section class="hero" style="padding-top:20px">
+    <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:24px;align-items:start">
+      <img src="${p.image}" alt="${p.title}" style="width:100%;border-radius:14px;border:1px solid #e5e7eb">
+      <div>
+        ${(p.badges||[]).map(b=>`<span class="badge">${b}</span>`).join('')}
+        <h1 style="margin:10px 0">${p.title}</h1>
+        <div class="price" style="margin:8px 0"><span class="now">${fmt(p.price)}</span> ${p.compare_at_price?`<span class="compare">${fmt(p.compare_at_price)}</span>`:''}</div>
+        <div class="rating" style="margin-bottom:8px">★ ${p.rating || '4.5'} <small class="helper">(${p.reviews||0} recenzii)</small></div>
+        <p>${p.description}</p>
+        <p><small class="helper">🚌 ${p.shipping_note || ''}</small></p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:12px 0">${variants}</div>
+        <button class="btn primary" onclick="addToCart('${p.id}')">Adaugă în coș</button>
+        <a class="btn" href="${p.supplier_link}" target="_blank" rel="noopener">Vezi furnizor</a>
+      </div>
+    </div>
+  </section>`;
+}
+init();
+</script>
+</body>
+</html>

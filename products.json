@@ -1,0 +1,71 @@
+[
+  {
+    "id": "p1",
+    "title": "Mini blender portabil USB",
+    "price": 129.9,
+    "compare_at_price": 179.9,
+    "image": "assets/img/placeholder-1.svg",
+    "category": "Bucătărie",
+    "rating": 4.6,
+    "reviews": 128,
+    "description": "Blender compact pentru smoothie-uri, încărcare USB-C, 6 lame din oțel inoxidabil.",
+    "supplier_link": "https://example.com/aliexpress-blender",
+    "shipping_note": "Livrare 7–14 zile din depozit extern.",
+    "badges": [
+      "Best Seller",
+      "Reducere"
+    ],
+    "variants": [
+      {
+        "name": "Culoare",
+        "options": [
+          "Alb",
+          "Verde",
+          "Roz"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "p2",
+    "title": "Centură corectoare pentru postură",
+    "price": 89.0,
+    "compare_at_price": 129.0,
+    "image": "assets/img/placeholder-2.svg",
+    "category": "Sănătate & Fitness",
+    "rating": 4.4,
+    "reviews": 362,
+    "description": "Corectează postura la birou, material respirabil, ajustabil pentru adulți.",
+    "supplier_link": "https://example.com/cjdropshipping-postura",
+    "shipping_note": "Livrare 10–20 zile.",
+    "badges": [
+      "Nou"
+    ],
+    "variants": [
+      {
+        "name": "Mărime",
+        "options": [
+          "S",
+          "M",
+          "L"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "p3",
+    "title": "Perie de deparazitare pentru animale",
+    "price": 59.5,
+    "compare_at_price": 79.9,
+    "image": "assets/img/placeholder-3.svg",
+    "category": "Animale",
+    "rating": 4.7,
+    "reviews": 540,
+    "description": "Îndepărtează firele moarte fără durere. Ușor de curățat.",
+    "supplier_link": "https://example.com/spocket-pet-brush",
+    "shipping_note": "Livrare 8–15 zile.",
+    "badges": [
+      "Eco"
+    ]
+  }
+]
